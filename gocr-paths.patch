@@ -1,0 +1,48 @@
+--- gocr-0.3.2/frontend/gnome/src/functions.c.orig	Thu May 24 15:05:31 2001
++++ gocr-0.3.2/frontend/gnome/src/functions.c	Wed Jul  4 02:25:18 2001
+@@ -209,7 +209,7 @@
+ 			"DUST=%d\n"
+ 			"SPACE=%d\n"
+ 			"VIEWER=%s\n"
+-			"PATH=/usr/local/bin/gocr\n",
++			"PATH=/usr/bin/gocr\n",
+ 			nGrey,
+ 			nDust,
+ 			nSpace,
+@@ -334,8 +334,8 @@
+   gtk_widget_show ( GTK_WIDGET (label));
+   if ( Path == NULL)
+     {
+-      Path = g_malloc(strlen("/usr/local/bin/gocr\0"+1));
+-      sprintf(Path,"/usr/local/bin/gocr");
++      Path = g_malloc(strlen("/usr/bin/gocr\0"+1));
++      sprintf(Path,"/usr/bin/gocr");
+     }
+ 
+   TxtPath=gtk_entry_new();
+--- gocr-0.3.2/src/Makefile.in.orig	Wed Jul  4 02:26:16 2001
++++ gocr-0.3.2/src/Makefile.in	Wed Jul  4 02:40:40 2001
+@@ -27,9 +27,9 @@
+ # these two lines are for cross-compiling, not tested
+ #srcdir = @srcdir@
+ #VPATH = @srcdir@
+-bindir = @prefix@@bindir@
+-libdir = @prefix@@libdir@
+-includedir = @prefix@@includedir@
++bindir = @bindir@
++libdir = @libdir@
++includedir = @includedir@
+ 
+ CC=@CC@
+ RANLIB=@RANLIB@
+--- gocr-0.3.2/man/Makefile.in.orig	Wed Jul  4 02:26:16 2001
++++ gocr-0.3.2/man/Makefile.in	Wed Jul  4 02:41:14 2001
+@@ -4,7 +4,7 @@
+ 
+ PROGRAM = gocr
+ 
+-mandir = @prefix@@mandir@
++mandir = @mandir@
+ 
+ INSTALL=@INSTALL@
+ 
