@@ -7,4 +7,5 @@ Icon=gocr.png
 Exec=gocr
 Terminal=false
 Type=Application
+Categories=GTK;Graphics;OCR;
 # vi: encoding=utf-8
