@@ -24,15 +24,14 @@ GOCR is an optical character recognition program, released under the
 GNU General Public License. It reads images in many formats (pnm, pbm,
 pgm, ppm, some pcx and tga image files (or PNM from stdin); if
 pnm-tools installed and running linux-like system you can also use
-pnm.gz, pnm.bz2, png, jpg, tiff, gif, bmp and others) and outputs
-a text file.
+pnm.gz, pnm.bz2, png, jpg, tiff, gif, bmp and others) and outputs a
+text file.
 
 %description -l pl
 GOCR jest programem do rozpoznawania pisma wypuszczonym na licencji
-GNU GPL. Czyta obrazki w formatach pnm, pbm, pgm, ppm, niektóre pcx
-i tga; je¿eli s± zainstalowane narzêdzia do PNM, mo¿e te¿ czytaæ
-pnm.gz, pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik
-tekstowy.
+GNU GPL. Czyta obrazki w formatach pnm, pbm, pgm, ppm, niektóre pcx i
+tga; je¿eli s± zainstalowane narzêdzia do PNM, mo¿e te¿ czytaæ pnm.gz,
+pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 
 %package gtk
 Summary:	Gtk+ frontend for gocr
