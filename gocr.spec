@@ -63,7 +63,7 @@ autoconf
 (cd frontend/gnome
 autoconf
 (cd src ; autoconf)
-%configure
+%configure --prefix=%{_xprefix} --bindir=%{_xbindir}
 %{__make})
 
 %install
