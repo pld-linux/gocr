@@ -1,7 +1,7 @@
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
-Version:	0.3.2
+Version:	0.3.4
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
@@ -15,6 +15,7 @@ BuildRequires:	netpbm-devel
 BuildRequires:	gtk+-devel >= 1.2.8
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_xprefix	/usr/X11R6
@@ -55,10 +56,13 @@ Frontend do gocr oparty o Gtk+.
 %patch1 -p1
 
 %build
+autoconf
 %configure
 %{__make}
 
 cd frontend/gnome
+autoconf
+(cd src ; autoconf)
 %configure --prefix=%{_xprefix} --bindir=%{_xbindir}
 %{__make}
 
@@ -74,7 +78,7 @@ gzip -9nf AUTHORS BUGS CREDITS HISTORY README REMARK.txt REVIEW TODO \
 	frontend/gnome/{AUTHORS,README,TODO}
 
 %clean
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
