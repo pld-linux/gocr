@@ -5,8 +5,6 @@ Version:	0.3.4
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
-Group(de):	Applikationen/Grafik
-Group(pl):	Aplikacje/Grafika
 Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-paths.patch
@@ -40,8 +38,6 @@ tekstowy.
 Summary:	Gtk+ frontend for gocr
 Summary(pl):	Frontend Gtk+ do gocr
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 Requires:	%{name} = %{version}
 
 %description gtk
