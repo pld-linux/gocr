@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
+# Source0-md5:	824984b5d5c44b6e3c2a1a1d5fb6d48e
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
