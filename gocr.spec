@@ -49,13 +49,13 @@ Frontend do gocr oparty o Gtk+.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
 
 (cd frontend/gnome
-autoconf
+%{__autoconf}
 (cd src ; autoconf)
 %configure --prefix=%{_xprefix} --bindir=%{_xbindir}
 %{__make})
