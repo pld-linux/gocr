@@ -5,8 +5,7 @@ Version:	0.37
 Release:	2
 License:	GPL
 Group:		Applications/Graphics
-# Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/jocr/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
