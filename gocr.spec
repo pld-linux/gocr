@@ -56,32 +56,35 @@ cp -f /usr/share/automake/config.* .
 
 (cd frontend/gnome
 %{__autoconf}
-(cd src ; autoconf)
-%configure --prefix=%{_xprefix} --bindir=%{_xbindir}
+cd src
+%{__autoconf}
+cd ..
+%configure \
+	--prefix=%{_xprefix} \
+	--bindir=%{_xbindir} \
 %{__make})
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C frontend/gnome install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gnome/mkinstalldirs frontend/mkinstalldirs
-%{__make} -C frontend/gnome install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf AUTHORS BUGS CREDITS HISTORY README REMARK.txt REVIEW TODO \
-	doc/{examples.txt,ocr.ps,unicode.txt} \
-	frontend/gnome/{AUTHORS,README,TODO}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz
+%doc AUTHORS BUGS CREDITS HISTORY README REMARK.txt REVIEW TODO
+%doc doc/{examples.txt,ocr.ps,unicode.txt}
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 
 %files gtk
 %defattr(644,root,root,755)
-%doc frontend/gnome/*.gz
+%doc frontend/gnome/{AUTHORS,README,TODO}
 %attr(755,root,root) %{_xbindir}/*
