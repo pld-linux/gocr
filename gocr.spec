@@ -1,13 +1,11 @@
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
-Version:	0.3.4
-Release:	2
+Version:	0.3.6
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-Patch0:		%{name}-DESTDIR.patch
-Patch1:		%{name}-paths.patch
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel >= 1.2.8
@@ -47,11 +45,11 @@ Frontend do gocr oparty o Gtk+.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
+aclocal
 autoconf
+cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
 
