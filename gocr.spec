@@ -70,7 +70,7 @@ cd src
 cd ..
 %configure \
 	--prefix=%{_xprefix} \
-	--bindir=%{_xbindir} 
+	--bindir=%{_xbindir}
 %{__make}
 cd ../../..
 
