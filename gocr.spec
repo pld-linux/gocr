@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
+Requires:	netpbm-progs
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.8
