@@ -2,7 +2,7 @@ Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
 Version:	0.37
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
@@ -17,9 +17,6 @@ BuildRequires:	netpbm-devel
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_xprefix	/usr/X11R6
-%define		_xbindir	%{_xprefix}/bin
 
 %description
 GOCR is an optical character recognition program, released under the
@@ -68,11 +65,8 @@ cd src
 %{__automake}
 %{__autoconf}
 cd ..
-%configure \
-	--prefix=%{_xprefix} \
-	--bindir=%{_xbindir}
+%configure
 %{__make}
-cd ../../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -93,12 +87,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS CREDITS HISTORY README REMARK.txt REVIEW TODO
 %doc doc/{examples.txt,gocr.html,unicode.txt}
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/gocr
+%{_mandir}/man1/gocr.1*
 
 %files gtk
 %defattr(644,root,root,755)
 %doc frontend/gnome/{AUTHORS,README,TODO}
-%attr(755,root,root) %{_xbindir}/*
+%attr(755,root,root) %{_bindir}/gtk-ocr
 %{_applnkdir}/Graphics/*
 %{_pixmapsdir}/*
