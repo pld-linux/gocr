@@ -5,7 +5,8 @@ Version:	0.3.6
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
-Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
+# Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/jocr/%{name}-%{version}.tar.gz
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel >= 1.2.8
