@@ -2,7 +2,7 @@ Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
 Version:	0.3.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Graphics
 # Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
@@ -49,20 +49,20 @@ Frontend do gocr oparty o Gtk+.
 
 %build
 aclocal
-%{__autoconf}
 cp -f /usr/share/automake/config.* .
+%{__autoconf}
 %configure
 %{__make}
 
-(cd frontend/gnome
+cd frontend/gnome/src
+aclocal
+%{__automake}
 %{__autoconf}
-cd src
-%{__autoconf}
-cd ..
 %configure \
 	--prefix=%{_xprefix} \
 	--bindir=%{_xbindir} \
-%{__make})
+%{__make}
+cd ../../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
