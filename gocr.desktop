@@ -4,6 +4,6 @@ Comment=Gtk+ frontend for gocr
 Comment[pl]=Frontend Gtk+ do gocr
 Icon=gocr.png
 Exec=gocr
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
