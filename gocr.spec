@@ -7,6 +7,8 @@ License:	GPL
 Group:		Applications/Graphics
 # Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/jocr/%{name}-%{version}.tar.gz
+Source1:	%{name}.desktop
+Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -74,13 +76,15 @@ cd ../../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_applngdir}/Graphics,%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 %{__make} -C frontend/gnome install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-ln -sf gnome/mkinstalldirs frontend/mkinstalldirs
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applngdir}/Graphics
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,3 +100,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc frontend/gnome/{AUTHORS,README,TODO}
 %attr(755,root,root) %{_xbindir}/*
+%{_applngdir}/Graphics/*
+%{_pixmapsdir}/*
