@@ -1,7 +1,7 @@
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
-Version:	0.3.6
+Version:	0.37
 Release:	2
 License:	GPL
 Group:		Applications/Graphics
@@ -55,13 +55,20 @@ cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
 
-cd frontend/gnome/src
+# ok its ugly..but works
+cd frontend/gnome
+rm -f Makefile configure src/missing
 %{__aclocal}
 %{__automake}
 %{__autoconf}
+cd src
+%{__aclocal}
+%{__automake}
+%{__autoconf}
+cd ..
 %configure \
 	--prefix=%{_xprefix} \
-	--bindir=%{_xbindir} \
+	--bindir=%{_xbindir} 
 %{__make}
 cd ../../..
 
@@ -81,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS CREDITS HISTORY README REMARK.txt REVIEW TODO
-%doc doc/{examples.txt,ocr.ps,unicode.txt}
+%doc doc/{examples.txt,gocr.html,unicode.txt}
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 
