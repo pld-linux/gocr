@@ -9,10 +9,11 @@ Group:		Applications/Graphics
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/jocr/%{name}-%{version}.tar.gz
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.8
-BuildRequires:	tetex-latex
-BuildRequires:	tetex-dvips
 BuildRequires:	netpbm-devel
+BuildRequires:	tetex-dvips
+BuildRequires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_xprefix	/usr/X11R6
@@ -48,14 +49,14 @@ Frontend do gocr oparty o Gtk+.
 %setup -q
 
 %build
-aclocal
+%{__aclocal}
 cp -f /usr/share/automake/config.* .
 %{__autoconf}
 %configure
 %{__make}
 
 cd frontend/gnome/src
-aclocal
+%{__aclocal}
 %{__automake}
 %{__autoconf}
 %configure \
