@@ -11,11 +11,11 @@ Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-paths.patch
 URL:		http://jocr.sourceforge.net/
-BuildRequires:	netpbm-devel
+BuildRequires:	autoconf
 BuildRequires:	gtk+-devel >= 1.2.8
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
-BuildRequires:	autoconf
+BuildRequires:	netpbm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_xprefix	/usr/X11R6
@@ -60,14 +60,15 @@ autoconf
 %configure
 %{__make}
 
-cd frontend/gnome
+(cd frontend/gnome
 autoconf
 (cd src ; autoconf)
-%configure --prefix=%{_xprefix} --bindir=%{_xbindir}
-%{__make}
+%configure
+%{__make})
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gnome/mkinstalldirs frontend/mkinstalldirs
