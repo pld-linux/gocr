@@ -7,7 +7,7 @@ License:	GPL
 Group:		Applications/Graphics
 Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/jocr/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-paths.patch
 URL:		http://jocr.sourceforge.net/
