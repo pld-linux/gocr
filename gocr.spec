@@ -10,13 +10,13 @@ Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
-Requires:	netpbm-progs
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.8
 BuildRequires:	netpbm-devel
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-latex
+Requires:	netpbm-progs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +37,7 @@ pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 Summary:	GTK+ frontend for gocr
 Summary(pl):	Frontend GTK+ do gocr
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description gtk
 GTK+-based frontend for gocr.
