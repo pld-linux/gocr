@@ -1,16 +1,16 @@
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
-Version:	0.37
-Release:	3
+Version:	0.38
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	824984b5d5c44b6e3c2a1a1d5fb6d48e
+# Source0-md5:	bb4ec433f9f6432873505c6744ada5f4
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://jocr.sourceforge.net/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.8
 BuildRequires:	netpbm-devel
@@ -56,7 +56,7 @@ cp -f /usr/share/automake/config.* .
 
 # ok its ugly..but works
 cd frontend/gnome
-rm -f Makefile configure src/missing
+rm -f Makefile configure
 %{__aclocal}
 %{__automake}
 %{__autoconf}
@@ -74,6 +74,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics,%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
 %{__make} -C frontend/gnome install \
 	DESTDIR=$RPM_BUILD_ROOT
 
