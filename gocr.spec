@@ -100,5 +100,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc frontend/gnome/{AUTHORS,README,TODO}
 %attr(755,root,root) %{_xbindir}/*
-%{_applngdir}/Graphics/*
+%{_applnkdir}/Graphics/*
 %{_pixmapsdir}/*
