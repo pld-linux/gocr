@@ -2,7 +2,7 @@ Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
 Version:	0.39
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
@@ -70,7 +70,7 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -78,7 +78,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Graphics,%{_pixmapsdir}}
 %{__make} -C frontend/gnome install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/Graphics
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -95,5 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc frontend/gnome/{AUTHORS,README,TODO}
 %attr(755,root,root) %{_bindir}/gtk-ocr
-%{_applnkdir}/Graphics/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
