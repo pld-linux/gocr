@@ -33,16 +33,16 @@ tga; je¿eli s± zainstalowane narzêdzia do PNM, mo¿e te¿ czytaæ pnm.gz,
 pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 
 %package gtk
-Summary:	Gtk+ frontend for gocr
-Summary(pl):	Frontend Gtk+ do gocr
+Summary:	GTK+ frontend for gocr
+Summary(pl):	Frontend GTK+ do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}
 
 %description gtk
-Gtk+-based frontend for gocr.
+GTK+-based frontend for gocr.
 
 %description gtk -l pl
-Frontend do gocr oparty o Gtk+.
+Frontend do gocr oparty o GTK+.
 
 %prep
 %setup -q
