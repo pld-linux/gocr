@@ -1,14 +1,15 @@
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
-Version:	0.40
+Version:	0.41
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	13cc0d008747f5bb56d8b17be9b61859
+# Source0-md5:	ace7ba289e53a05dbc66cc95a30420b8
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		%{name}-link.patch
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
@@ -45,8 +46,22 @@ GTK+-based frontend for gocr.
 %description gtk -l pl
 Frontend do gocr oparty o GTK+.
 
+%package tcl
+Summary:	Tcl/Tk frontend for gocr
+Summary(pl):	Frontend Tcl/Tk do gocr
+Group:		X11/Applications/Graphics
+Requires:	%{name} = %{version}-%{release}
+Requires:	tk
+
+%description tcl
+Tcl/Tk frontend for gocr.
+
+%description tcl -l pl
+Frontend Tcl/Tk do gocr.
+
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
@@ -98,3 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gtk-ocr
 %{_desktopdir}/*
 %{_pixmapsdir}/*
+
+%files tcl
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gocr.tcl
