@@ -1,3 +1,5 @@
+# TODO
+# - remove or install .h and .a
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
