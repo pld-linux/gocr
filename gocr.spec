@@ -1,5 +1,3 @@
-# TODO
-# - remove or install .h and .a
 Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
@@ -98,6 +96,10 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+
+# nothing useful yet
+rm $RPM_BUILD_ROOT%{_libdir}/libPgm2asc.a
+rm $RPM_BUILD_ROOT%{_includedir}/gocr.h
 
 %clean
 rm -rf $RPM_BUILD_ROOT
