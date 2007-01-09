@@ -1,0 +1,11 @@
+--- gocr-0.43/configure.in~	2006-08-30 12:24:52.000000000 +0300
++++ gocr-0.43/configure.in	2007-01-09 16:12:11.226659060 +0200
+@@ -27,7 +27,7 @@
+ AC_ARG_WITH(netpbm,
+  [  --with-netpbm=PATH      enter the PATH to netpbm package],
+  [ if test "$withval" != "no"; then
+-    LDFLAGS="-L$withval/lib $LDFLAGS";\
++    LDFLAGS="-L$withval/lib64 $LDFLAGS";\
+     CPPFLAGS="-I$withval/include $CPPFLAGS";\
+    fi ])
+ if test -n "$with_netpbm"; then echo "option: with_netpbm $with_netpbm"; fi
