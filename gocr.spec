@@ -2,7 +2,7 @@ Summary:	GNU OCR
 Summary(pl):	Program GNU do OCR
 Name:		gocr
 Version:	0.43
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-lib64.patch
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
@@ -62,12 +63,16 @@ Frontend Tcl/Tk do gocr.
 %prep
 %setup -q
 %patch0 -p1
+%if "%{_lib}" != "lib"
+%patch1 -p1
+%endif
 
 %build
 %{__aclocal}
 cp -f /usr/share/automake/config.* .
 %{__autoconf}
-%configure
+%configure \
+	--with-netpbm=/usr
 %{__make}
 
 # ok its ugly..but works
