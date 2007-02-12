@@ -1,5 +1,5 @@
 Summary:	GNU OCR
-Summary(pl):	Program GNU do OCR
+Summary(pl.UTF-8):   Program GNU do OCR
 Name:		gocr
 Version:	0.43
 Release:	2
@@ -29,27 +29,27 @@ pnm-tools installed and running linux-like system you can also use
 pnm.gz, pnm.bz2, png, jpg, tiff, gif, bmp and others) and outputs a
 text file.
 
-%description -l pl
+%description -l pl.UTF-8
 GOCR jest programem do rozpoznawania pisma wypuszczonym na licencji
-GNU GPL. Czyta obrazki w formatach pnm, pbm, pgm, ppm, niektóre pcx i
-tga; je¿eli s± zainstalowane narzêdzia do PNM, mo¿e te¿ czytaæ pnm.gz,
+GNU GPL. Czyta obrazki w formatach pnm, pbm, pgm, ppm, niektÃ³re pcx i
+tga; jeÅ¼eli sÄ… zainstalowane narzÄ™dzia do PNM, moÅ¼e teÅ¼ czytaÄ‡ pnm.gz,
 pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 
 %package gtk
 Summary:	GTK+ frontend for gocr
-Summary(pl):	Frontend GTK+ do gocr
+Summary(pl.UTF-8):   Frontend GTK+ do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
 %description gtk
 GTK+-based frontend for gocr.
 
-%description gtk -l pl
+%description gtk -l pl.UTF-8
 Frontend do gocr oparty o GTK+.
 
 %package tcl
 Summary:	Tcl/Tk frontend for gocr
-Summary(pl):	Frontend Tcl/Tk do gocr
+Summary(pl.UTF-8):   Frontend Tcl/Tk do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 Requires:	tk
@@ -57,7 +57,7 @@ Requires:	tk
 %description tcl
 Tcl/Tk frontend for gocr.
 
-%description tcl -l pl
+%description tcl -l pl.UTF-8
 Frontend Tcl/Tk do gocr.
 
 %prep
