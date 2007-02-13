@@ -1,5 +1,5 @@
 Summary:	GNU OCR
-Summary(pl.UTF-8):   Program GNU do OCR
+Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
 Version:	0.43
 Release:	2
@@ -37,7 +37,7 @@ pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 
 %package gtk
 Summary:	GTK+ frontend for gocr
-Summary(pl.UTF-8):   Frontend GTK+ do gocr
+Summary(pl.UTF-8):	Frontend GTK+ do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
@@ -49,7 +49,7 @@ Frontend do gocr oparty o GTK+.
 
 %package tcl
 Summary:	Tcl/Tk frontend for gocr
-Summary(pl.UTF-8):   Frontend Tcl/Tk do gocr
+Summary(pl.UTF-8):	Frontend Tcl/Tk do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 Requires:	tk
