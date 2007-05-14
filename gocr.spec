@@ -1,12 +1,12 @@
 Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
-Version:	0.43
-Release:	2
+Version:	0.44
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	f989fe8e24f82d19c8ce55df15784e15
+# Source0-md5:	8657cb057d7836ed171b5705d5e082c8
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-link.patch
@@ -68,8 +68,8 @@ Frontend Tcl/Tk do gocr.
 %endif
 
 %build
-%{__aclocal}
 cp -f /usr/share/automake/config.* .
+%{__aclocal}
 %{__autoconf}
 %configure \
 	--with-netpbm=/usr
