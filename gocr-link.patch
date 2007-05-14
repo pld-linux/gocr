@@ -1,6 +1,6 @@
---- gocr-0.41/src/Makefile.in.orig	2006-08-23 00:33:06.000000000 +0200
-+++ gocr-0.41/src/Makefile.in	2006-09-04 22:50:24.966172500 +0200
-@@ -42,7 +42,8 @@
+--- gocr-0.44/src/Makefile.in.orig	2006-12-13 17:00:05.000000000 +0100
++++ gocr-0.44/src/Makefile.in	2007-05-14 23:56:02.112679628 +0200
+@@ -45,7 +45,8 @@
  CPPFLAGS=@CPPFLAGS@
  # to see the config.h
  CFLAGS=@CFLAGS@ $(CPPFLAGS) -I../include $(DEFS)
@@ -10,12 +10,12 @@
  DESTDIR=@prefix@
  
  .c.o: $(INCLUDEFILES)
-@@ -53,7 +54,7 @@
- all: $(PROGRAM) $(LIBPGMASCLIB)
+@@ -57,7 +58,7 @@
  
  $(PROGRAM): $(LIBPGMASCLIB) gocr.o
--	$(CC) -o $@ gocr.o $(LDFLAGS) ./lib$(PGMASCLIB).a
-+	$(CC) -o $@ gocr.o $(LDFLAGS) ./lib$(PGMASCLIB).a $(LIBS)
+ 	# make it conform to ld --as-needed
+-	$(CC) -o $@ gocr.o ./lib$(PGMASCLIB).a $(LDFLAGS)
++	$(CC) $(LDFLAGS) -o $@ gocr.o ./lib$(PGMASCLIB).a $(LIBS)
  	if test -r $(PROGRAM); then cp $@ ../bin; fi
  
  gocr.o: gocr.h Makefile
