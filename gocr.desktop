@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=GOCR
 Comment=Gtk+ frontend for gocr
 Comment[pl]=Frontend Gtk+ do gocr
-Icon=gocr.png
+Icon=gocr
 Exec=gocr
 Terminal=false
 Type=Application
