@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=GOCR
-Comment=Gtk+ frontend for gocr
-Comment[pl]=Frontend Gtk+ do gocr
+Comment=Tcl frontend for gocr
+Comment[pl]=Frontend Tcl do gocr
 Icon=gocr
-Exec=gocr
+Exec=gocr.tcl
 Terminal=false
 Type=Application
 Categories=GTK;Graphics;OCR;
