@@ -1,12 +1,12 @@
 Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
-Version:	0.44
+Version:	0.45
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	8657cb057d7836ed171b5705d5e082c8
+# Source0-md5:	134d459f64656b201ca66eebafa108f0
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-link.patch
@@ -14,7 +14,6 @@ Patch1:		%{name}-lib64.patch
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
-BuildRequires:	gtk+-devel >= 1.2.8
 BuildRequires:	netpbm-devel
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-latex
@@ -35,24 +34,14 @@ GNU GPL. Czyta obrazki w formatach pnm, pbm, pgm, ppm, niektóre pcx i
 tga; jeżeli są zainstalowane narzędzia do PNM, może też czytać pnm.gz,
 pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 
-%package gtk
-Summary:	GTK+ frontend for gocr
-Summary(pl.UTF-8):	Frontend GTK+ do gocr
-Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}-%{release}
-
-%description gtk
-GTK+-based frontend for gocr.
-
-%description gtk -l pl.UTF-8
-Frontend do gocr oparty o GTK+.
-
 %package tcl
 Summary:	Tcl/Tk frontend for gocr
 Summary(pl.UTF-8):	Frontend Tcl/Tk do gocr
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 Requires:	tk
+# dropped, GTK+ 1.x code which nobody cared to update
+Obsoletes:	gocr-gtk
 
 %description tcl
 Tcl/Tk frontend for gocr.
@@ -75,28 +64,11 @@ cp -f /usr/share/automake/config.* .
 	--with-netpbm=/usr
 %{__make}
 
-# ok its ugly..but works
-cd frontend/gnome
-rm -f Makefile configure
-%{__aclocal}
-%{__automake}
-%{__autoconf}
-cd src
-%{__aclocal}
-%{__automake}
-%{__autoconf}
-cd ..
-%configure
-%{__make}
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__make} -C frontend/gnome install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
@@ -116,13 +88,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gocr
 %{_mandir}/man1/gocr.1*
 
-%files gtk
-%defattr(644,root,root,755)
-%doc frontend/gnome/{AUTHORS,README,TODO}
-%attr(755,root,root) %{_bindir}/gtk-ocr
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
-
 %files tcl
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gocr.tcl
+%{_desktopdir}/gocr.desktop
+%{_pixmapsdir}/gocr.png
