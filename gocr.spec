@@ -1,16 +1,15 @@
 Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
-Version:	0.45
+Version:	0.47
 Release:	1
 License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	134d459f64656b201ca66eebafa108f0
+# Source0-md5:	73e35e7dbf3f61b9e53a175e555404d4
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-link.patch
-Patch1:		%{name}-lib64.patch
+Patch0:		%{name}-lib64.patch
 URL:		http://jocr.sourceforge.net/
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	automake
@@ -51,9 +50,8 @@ Frontend Tcl/Tk do gocr.
 
 %prep
 %setup -q
-%patch0 -p1
 %if "%{_lib}" != "lib"
-%patch1 -p1
+%patch0 -p1
 %endif
 
 %build
@@ -73,10 +71,6 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
-
-# nothing useful yet
-rm $RPM_BUILD_ROOT%{_libdir}/libPgm2asc.a
-rm $RPM_BUILD_ROOT%{_includedir}/gocr.h
 
 %clean
 rm -rf $RPM_BUILD_ROOT
