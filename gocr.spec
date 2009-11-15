@@ -1,12 +1,12 @@
 Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
-Version:	0.47
+Version:	0.48
 Release:	1
 License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	73e35e7dbf3f61b9e53a175e555404d4
+# Source0-md5:	9882ba9a93fcb18ab704a10da80c228c
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-lib64.patch
