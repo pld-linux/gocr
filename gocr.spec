@@ -1,12 +1,12 @@
 Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
-Version:	0.48
+Version:	0.49
 Release:	1
 License:	GPL v2+
 Group:		Applications/Graphics
-Source0:	http://dl.sourceforge.net/jocr/%{name}-%{version}.tar.gz
-# Source0-md5:	9882ba9a93fcb18ab704a10da80c228c
+Source0:	http://www-e.uni-magdeburg.de/jschulen/ocr/%{name}-%{version}.tar.gz
+# Source0-md5:	4e527bc4bdd97c2be15fdd818857507f
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-lib64.patch
@@ -37,7 +37,7 @@ pnm.bz2, png,jpg, tiff, gif, bmp i inne. Wynikiem jest plik tekstowy.
 Summary:	Tcl/Tk frontend for gocr
 Summary(pl.UTF-8):	Frontend Tcl/Tk do gocr
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}
 Requires:	tk
 # dropped, GTK+ 1.x code which nobody cared to update
 Obsoletes:	gocr-gtk
