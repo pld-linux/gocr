@@ -11,7 +11,7 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-lib64.patch
 URL:		http://jocr.sourceforge.net/
-BuildRequires:	autoconf >= 2.13
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	netpbm-devel
 BuildRequires:	tetex-dvips
