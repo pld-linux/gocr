@@ -51,7 +51,7 @@ Frontend Tcl/Tk do gocr.
 %prep
 %setup -q
 %if "%{_lib}" != "lib"
-%patch0 -p1
+%patch -P0 -p1
 %endif
 
 %build
