@@ -2,7 +2,7 @@ Summary:	GNU OCR
 Summary(pl.UTF-8):	Program GNU do OCR
 Name:		gocr
 Version:	0.50
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://www-e.uni-magdeburg.de/jschulen/ocr/%{name}-%{version}.tar.gz
